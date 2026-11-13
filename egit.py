@@ -25,7 +25,7 @@ ds = ds.map(lambda b: tok(b["text"], truncation=True, max_length=512),
 
 args = TrainingArguments(
     output_dir="out", num_train_epochs=3, per_device_train_batch_size=4,
-    gradient_accumulation_steps=4, learning_rate=2e-4, warmup_ratio=0.05,
+    gradient_accumulation_steps=4, learning_rate=2e-4, warmup_steps=0.05,
     lr_scheduler_type="cosine", fp16=True, logging_steps=5,
     eval_strategy="epoch", save_strategy="epoch", report_to="none")
 
